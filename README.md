@@ -100,64 +100,13 @@ For real data, each row is organized as follows:
 * Column 8: number branch-and-bound nodes.
 
 
-In Linux, to build the version that multiplies all elements of a vector by a
-constant (used to obtain the results in [Figure 1](results/mult-test.png) in the
-paper), stepping K elements at a time, execute the following commands.
-
-```
-make mult
-```
-
-Alternatively, to build the version that sums the elements of a vector (used
-to obtain the results [Figure 2](results/sum-test.png) in the paper), stepping K
-elements at a time, do the following.
-
-```
-make clean
-make sum
-```
-
-Be sure to make clean before building a different version of the code.
-
-## Results
-
-Figure 1 in the paper shows the results of the multiplication test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
-
-![Figure 1](results/mult-test.png)
-
-Figure 2 in the paper shows the results of the sum test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
-
-![Figure 1](results/sum-test.png)
-
 ## Replicating
 
-To replicate the results in [Figure 1](results/mult-test), do either
+To replicate the results with synthetic data, reported in Table 1, Table 2 and Figure 2 and Figure 3 of the paper, use file runOutlierSynt.bat (on a Windows machine).
 
-```
-make mult-test
-```
-or
-```
-python test.py mult
-```
-To replicate the results in [Figure 2](results/sum-test), do either
+To replicate the results with real data, reported in Figure 4 and Figure 5 of the paper and Table 4 and 5 of the Online Supplement, use file runOutlierReal.bat (on a Windows machine).
 
-```
-make sum-test
-```
-or
-```
-python test.py sum
-```
+## Source code
+The source code can be found in the src folder.
 
-## Ongoing Development
 
-This code is being developed on an on-going basis at the author's
-[Github site](https://github.com/tkralphs/JoCTemplate).
-
-## Support
-
-For support in using this software, submit an
-[issue](https://github.com/tkralphs/JoCTemplate/issues/new).
