@@ -8,7 +8,7 @@ Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](
 
 The software and data in this repository are a snapshot of the software and data
 that were used in the research reported on in the paper 
-[This is a Template](https://doi.org/10.1287/ijoc.2025.1215) by Andres Gomez and Jose Neto. 
+[Outlier detection in regression: Conic quadratic formulations](https://doi.org/10.1287/ijoc.2025.1215) by Andres Gomez and Jose Neto. 
 
 
 **Important: This code is being developed on an on-going basis at 
@@ -39,7 +39,9 @@ Below is the BibTex for citing this snapshot of the repository.
 
 ## Description
 
-The goal of this software is to demonstrate the effect of cache optimization.
+The goal of this software is to demonstrate the use of mixed-integer conic quadratic formulations to detect outliers in regression problems (closely related to the Least Trimmed Squares problem in statistics).
+
+The methods are implemented in Java and rely on commercial solvers Gurobi and Mosek. Executing the code requires a license for these solvers.
 
 ## Building
 
