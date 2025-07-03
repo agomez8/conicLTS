@@ -43,6 +43,36 @@ The goal of this software is to demonstrate the use of mixed-integer conic quadr
 
 The methods are implemented in Java and rely on commercial solvers Gurobi and Mosek. Executing the code requires a license for these solvers.
 
+## Executing the code
+
+As a java code, the source code is precompiled and can be executed directly via file ./dist/LTS.jar. Ensure to install Gurobi and Mosek and replace files gurobi.jar and mosek.jar in ./dist/lib with those obtaining from installing these software.
+
+The code can be executed from the console. Files "runOutlierSynt.bat" and "runOutlierReal.bat" contain example of how to execute the code to solve synthetic and real instances. 
+
+An example command to execute the code to tackle a synthetic instance is
+```
+java  -cp ./dist/Linear_Regression.jar trimmed.Trimmed 3 100 1 0.1 0.01 101 3
+```
+where: "java  -cp ./dist/Linear_Regression.jar" points to the direction of the executable jar file, and "trimmed.Trimmed" is the class used to run synthetic instances. The rest of parameters are as follows:
+* First parameter (3) is the number of features
+* Second parameter (100) is the number of datapoints
+* Third parameter (1) controls the synthetic data generation; 1 is used in the paper.
+* Fourth parameter (0.1) is the proportion of datapoints that should be discarded as outliers.
+* Fifth parameter (0.01) is the value of the L2 regularization
+* Sixth parameter (101) is the seed
+* Seventh parameter (3) is the method to be used. Method: 1= bigM. 2= Conic. -300= Conic+. 3: Least median of
+ squares from Bertsimas and Mazumder (2014). 4: Least absolute deviations. 5: Ridge regression. 6: Huber loss.
+
+An example command to execute the code to tackle a real instance is
+```
+java  -cp ./dist/LTS.jar trimmed.TrimmedReal ./data_robust/alcohol.csv 0.1 0.05 -4
+```
+where: "java  -cp ./dist/Linear_Regression.jar" points to the direction of the executable jar file, and "trimmed.TrimmedReal" is the class used to run real instances. The rest of parameters are as follows:
+* First parameter (./data_robust/alcohol.csv) is the path to the dataset in csv format
+* Second parameter(0.1) is the proportion of datapoints that should be discarded as outliers.
+* Third parameter (0.05) is the value of the L2 regularization
+* Fourth parameter (-4) is the method to be used. Method: 1= MIO based on big M formulation. 2= MIO based on conic. -300= MIO based on conic+. -4= alternating heuristic.
+
 ## Building
 
 In Linux, to build the version that multiplies all elements of a vector by a
