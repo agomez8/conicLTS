@@ -78,7 +78,7 @@ where: "java  -cp ./dist/Linear_Regression.jar" points to the direction of the e
 After solving an instance, the results are recorded in "./results/resultsLTSSynt.csv" (for synthetic instances) and "./results/resultsLTSReal.csv" (for real instances). Each instance solved is added as a new row to these files. 
 
 For synthetic data, each row is organized as follows:
-* First 7 columns:  are the parameters used to generate the instance.
+* Columns 1-7:  are the parameters used to generate the instance.
 * Column 8: best objective value found.
 * Column 9: best bound found.
 * Column 10: time in seconds.
@@ -90,6 +90,15 @@ For synthetic data, each row is organized as follows:
 * Column 12: proportion of variance explained.
 * Column 13: number of false negatives.
 * Column 14: number of false positives.
+* Column 16+: regression coefficients obtained and ground truth
+
+For real data, each row is organized as follows:
+* Columns 1-4:  are the parameters used to generate the instance.
+* Column 5: best objective value found.
+* Column 6: best bound found.
+* Column 7: time in seconds.
+* Column 8: number branch-and-bound nodes.
+
 
 In Linux, to build the version that multiplies all elements of a vector by a
 constant (used to obtain the results in [Figure 1](results/mult-test.png) in the
