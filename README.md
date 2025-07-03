@@ -51,9 +51,9 @@ The code can be executed from the console. Files "runOutlierSynt.bat" and "runOu
 
 An example command to execute the code to tackle a synthetic instance is
 ```
-java  -cp ./dist/Linear_Regression.jar trimmed.Trimmed 3 100 1 0.1 0.01 101 3
+java  -cp ./dist/LTS.jar trimmed.Trimmed 3 100 1 0.1 0.01 101 3
 ```
-where: "java  -cp ./dist/Linear_Regression.jar" points to the direction of the executable jar file, and "trimmed.Trimmed" is the class used to run synthetic instances. The rest of parameters are as follows:
+where: "java  -cp ./dist/LTS.jar" points to the direction of the executable jar file, and "trimmed.Trimmed" is the class used to run synthetic instances. The rest of parameters are as follows:
 * First parameter (3) is the number of features
 * Second parameter (100) is the number of datapoints
 * Third parameter (1) controls the synthetic data generation; 1 is used in the paper.
@@ -73,7 +73,23 @@ where: "java  -cp ./dist/Linear_Regression.jar" points to the direction of the e
 * Third parameter (0.05) is the value of the L2 regularization
 * Fourth parameter (-4) is the method to be used. Method: 1= MIO based on big M formulation. 2= MIO based on conic. -300= MIO based on conic+. -4= alternating heuristic.
 
-## Building
+## Output
+
+After solving an instance, the results are recorded in "./results/resultsLTSSynt.csv" (for synthetic instances) and "./results/resultsLTSReal.csv" (for real instances). Each instance solved is added as a new row to these files. 
+
+For synthetic data, each row is organized as follows:
+* First 7 columns:  are the parameters used to generate the instance.
+* Column 8: best objective value found.
+* Column 9: best bound found.
+* Column 10: time in seconds.
+* Column 11: number branch-and-bound nodes.
+* Column 8: training error.
+* Column 9: prediction error.
+* Column 10: relative risk.
+* Column 11: relative test error.
+* Column 12: proportion of variance explained.
+* Column 13: number of false negatives.
+* Column 14: number of false positives.
 
 In Linux, to build the version that multiplies all elements of a vector by a
 constant (used to obtain the results in [Figure 1](results/mult-test.png) in the
