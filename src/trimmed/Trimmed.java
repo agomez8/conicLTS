@@ -189,7 +189,7 @@ public class Trimmed {
      */
     static void exportSolution(String[] args, double[] vals, double[] stats, double[] sol, double[] truth) throws IOException {
 
-        try (FileWriter out = new FileWriter(new File("./results/resultsTrimmedHuber.csv"), true)) {
+        try (FileWriter out = new FileWriter(new File("./results/resultsLTSSynt.csv"), true)) {
             for (int i = 0; i < args.length; i++) {
                 out.write(args[i] + ", ");
             }

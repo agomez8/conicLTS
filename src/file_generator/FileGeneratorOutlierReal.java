@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -19,7 +19,7 @@ public class FileGeneratorOutlierReal {
 
         String instance = "java "
                 //                + "-Djava.library.path=\"C:/Program Files/IBM/ILOG/CPLEX_Studio1271/cplex/bin/x64_win64" 
-                + " -cp ./dist/Linear_Regression.jar trimmed.TrimmedReal";
+                + " -cp ./dist/LTS.jar trimmed.TrimmedReal";
 
         String[] datasets = {//"./data_robust/aircraft.csv",
             "./data_robust/alcohol.csv", "./data_robust/bushfire.csv", "./data_robust/cloud.csv",

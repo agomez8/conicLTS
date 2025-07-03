@@ -136,7 +136,7 @@ public class TrimmedReal {
      */
     static void exportSolution(String[] args, double[] vals) throws IOException {
 
-        try ( FileWriter out = new FileWriter(new File("./results/resultsTrimmedReal.csv"), true)) {
+        try ( FileWriter out = new FileWriter(new File("./results/resultsLTSReal.csv"), true)) {
             for (int i = 0; i < args.length; i++) {
                 out.write(args[i] + ", ");
             }
